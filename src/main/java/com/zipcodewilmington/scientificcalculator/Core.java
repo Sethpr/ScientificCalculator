@@ -32,6 +32,17 @@ public class Core{
     }
 
     /**
+     * Version of update to use if you want to display a non-decimal version of state.
+     * Translate it BEFORE handing it to update.
+     * @param x decimal value of state
+     * @param nonDecimalState non decimal value to be displayed
+     */
+    public void update(double x, String nonDecimalState){
+        setState(x);
+        setDisplay(nonDecimalState);
+    }
+
+    /**
      * Sets the state, please use update though.
      * @param x double value to set state to
      */
