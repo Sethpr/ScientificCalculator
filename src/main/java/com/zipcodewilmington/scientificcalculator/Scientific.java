@@ -10,9 +10,6 @@ public class Scientific {
     public Scientific() {
         Scientific calc;
         calc = new Scientific();
-        this.state = 0.0;
-        this.display = "0.0";
-        this.isErr = false;
     }
     public void switchDisplayMode(String mode) {
 
