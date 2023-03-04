@@ -6,4 +6,5 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestScientific {
-    private Scientific scientific;
+    public Scientific scientific;
+}

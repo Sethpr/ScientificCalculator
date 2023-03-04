@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestCore {
-    private Core core;
+    public Core core;
     @Before
     public void setup() {core = new Core();}
     @Test
