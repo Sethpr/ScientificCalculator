@@ -1,22 +1,50 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Core{
-    double state;
+    private double state; //Number currently being operated on in the calculator
+    private String display; //What the user is going to see, frequently a string version of state
+    private boolean isErr; //flags if there is an error, does not run calc functions if isErr is true
 
     public Core(){
-        state = 0;
+        this.state = 0.0;
+        this.display = "0.0";
+        this.isErr = false;
     }
 
     public double getState(){
-        return state;
+        return this.state;
     }
 
     public void setState(double x){
-        state = x;
+        this.state = x;
+    }
+
+    public String getDisplay() {
+        return this.display;
+    }
+
+    public void setDisplay(String display) {
+        this.display = display;
     }
 
     public void clearDisplay(){
-        System.out.println();
+        //System.out.println();
+        setState(0.0);
+        setDisplay("0.0");
+    }
+
+    public void err(){
+        setDisplay("Err");
+        this.isErr = true;
+    }
+
+    public void clearErr(){
+        setDisplay("" + state);
+        this.isErr = false;
+    }
+
+    public boolean checkErr(){
+        return this.isErr;
     }
 
     public double add(double x, double y){
