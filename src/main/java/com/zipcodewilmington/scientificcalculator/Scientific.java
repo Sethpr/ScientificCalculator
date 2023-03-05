@@ -3,9 +3,6 @@ package com.zipcodewilmington.scientificcalculator;
 public class Scientific {
     private double memory = 0;
     private double result = 0;
-    private double state;
-    private String display;
-    private boolean isErr;
 
     public Scientific() {
         Scientific calc;
@@ -25,27 +22,27 @@ public class Scientific {
     }
 
     public double getSine(double entry){
-        return result = Math.sin(entry);
+        return result = Math.sin(Math.toRadians(entry));
     }
 
     public double getCosine(double entry) {
-        return result = Math.cos(entry);
+        return result = Math.cos(Math.toRadians(entry));
     }
 
     public double getTangent(double entry) {
-        return result = Math.tan(entry);
+        return result = Math.tan(Math.toRadians(entry));
     }
 
     public double getInverseSine(double entry) {
-        return result = Math.asin(entry);
+        return result = Math.asin(Math.toRadians(entry));
     }
 
     public double getInverseCosine(double entry) {
-        return result = Math.acos(entry);
+        return result = Math.acos(Math.toRadians(entry));
     }
 
     public double getInverseTangent(double entry) {
-        return result = Math.atan(entry);
+        return result = Math.atan(Math.toRadians(entry));
     }
 
     public String switchUnitsMode(String mode) {
