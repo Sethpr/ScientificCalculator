@@ -10,7 +10,7 @@ public class Console {
     private double state = 0.0; //Number currently being operated on in the calculator
     private String display = "0.0"; //What the user is going to see, frequently a string version of state
     private boolean isErr = false; //flags if there is an error, does not run calc functions if isErr is true
-    
+
     /**
      * Gets the state value.
      * @return double state
@@ -60,7 +60,7 @@ public class Console {
      * @param display
      */
     public void setDisplay(String display) {
-        display = display;
+        this.display = display;
     }
 
     /**
@@ -77,7 +77,7 @@ public class Console {
      */
     public void err(){
         setDisplay("Err");
-        isErr = true;
+        this.isErr = true;
     }
 
     /**
@@ -85,7 +85,7 @@ public class Console {
      */
     public void clearErr(){
         setDisplay("" + state);
-        isErr = false;
+        this.isErr = false;
     }
 
 

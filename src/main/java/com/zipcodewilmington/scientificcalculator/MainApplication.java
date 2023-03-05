@@ -50,12 +50,8 @@ public class MainApplication {
 
     public static void main(String[] args) {
         Console con = new Console();
-        Console.println("Welcome to our calculator!");
-        Console.println(con.getDisplay());
-        Console.getStringInput("enter command, type 'help' for commands");
-
-        String s = Console.getStringInput("enter command, type 'help' for commands");
-        con.update(processIn(con, s, con.getState()));
+        Console.println("Welcome to our calculator! \n type 'help' for commands");
+        String s;
         while(true) {
             Console.println(con.getDisplay());
             s = Console.getStringInput("enter command").toLowerCase().trim();
