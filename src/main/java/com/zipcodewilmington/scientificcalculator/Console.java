@@ -1,32 +1,38 @@
 package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Scanner;
+import java.util.function.Supplier;
 
 /**
  * Created by leon on 2/9/18.
  */
 public class Console {
 
-    public static void print(String output, Object... args) {
+    Scanner in = new Scanner(System.in);
+    Supplier<String> userNum = () -> {return in.nextLine();};
+
+    public Console() {
+
+    }
+
+    public void print(String output, Object... args) {
         System.out.printf(output, args);
     }
 
-    public static void println(String output, Object... args) {
+    public void println(String output, Object... args) {
         print(output + "\n", args);
     }
 
-    public static String getStringInput(String prompt) {
-        Scanner scanner = new Scanner(System.in);
-        println(prompt);
-        String userInput = scanner.nextLine();
-        return userInput;
+    public String getStringInput(String prompt) {
+
+        return userNum.get();
     }
 
-    public static Integer getIntegerInput(String prompt) {
+    public Integer getIntegerInput(String prompt) {
         return null;
     }
 
-    public static Double getDoubleInput(String prompt) {
+    public Double getDoubleInput(String prompt) {
         return null;
     }
 }
