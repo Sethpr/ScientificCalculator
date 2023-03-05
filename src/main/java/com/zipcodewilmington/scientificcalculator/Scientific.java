@@ -3,13 +3,17 @@ package com.zipcodewilmington.scientificcalculator;
 public class Scientific {
     private double memory = 0;
     private double result = 0;
+    enum displayMode {binary, octal, decimal, hexadecimal};
+
+
 
     public Scientific() {
-        Scientific calc;
-        calc = new Scientific();
-    }
-    public void switchDisplayMode(String mode) {
 
+    }
+    public void switchDisplayMode() {
+        switch (displayMode) {
+
+        }
     }
     public void memoryPlus(double entry) {
         double memory = entry;
