@@ -148,7 +148,9 @@ public class Console {
     public String switchUnitsMode(String mode, double state) {
         if (mode.equalsIgnoreCase("degrees")) {
             return String.valueOf(Math.toDegrees(state));
-        } else if ()
+        } else if (mode.equalsIgnoreCase("radians")) {
+            return String.valueOf(Math.toDegrees(state));
+        }   return "" + state;
     }
     public static void print(String output, Object... args) {
         System.out.printf(output, args);
