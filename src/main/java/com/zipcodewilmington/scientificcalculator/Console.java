@@ -24,8 +24,13 @@ public class Console {
      * @param x double value that will become the state and display
      */
     public void update(double x){
-        setState(x);
-        setDisplay("" + x);
+        if(checkErr()){
+            err();
+        }
+        else {
+            setState(x);
+            setDisplay("" + x);
+        }
     }
 
     /**

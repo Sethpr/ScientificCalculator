@@ -33,19 +33,20 @@ public class MainApplication {
                 return Core.squareRoot(x);
             case "exponent":
                 return Core.exponent(x,Console.getDoubleInput());
-            case "switch":
+            case "switch sign":
                 return Core.switchSign(x);
             case "inverse":
                 return Core.inverse(x);
             case "help":
+                help();
                 return x;
             case "clear":
                 con.clearErr();
                 return 0.0;
             default:
                 System.out.println("Invalid command, please try again");
+                return x;
         }
-        return 0;
     }
 
     public static void main(String[] args) {
@@ -57,8 +58,16 @@ public class MainApplication {
             s = Console.getStringInput("enter command").toLowerCase().trim();
             if(con.checkErr() && !s.equals("clear")){
                 Console.println("Error please clear");
+                continue;
             }
             con.update(processIn(con, s, con.getState()));
         }
+    }
+
+    public static void help(){
+        System.out.println("list of commands:");
+        System.out.println("add, subtract, multiply, divide");
+        System.out.println("square, square root, exponent, switch sign");
+        System.out.println("inverse, help, clear");
     }
 }
