@@ -61,26 +61,26 @@ public class TestScientific {
     }
     @Test
     public void getInverseLog1(){
-        double expected = .84;
-        double actual = scientific.getInverseLog(1);
+        double expected = 1000000;
+        double actual = scientific.getInverseLog(5);
         Assert.assertEquals(expected, actual, 0.02);
     }
     @Test
     public void getNaturalLog1(){
-        double expected = .84;
-        double actual = scientific.getNaturalLog(1);
+        double expected = 1.60943;
+        double actual = scientific.getNaturalLog(5);
         Assert.assertEquals(expected, actual, 0.02);
     }
     @Test
     public void getInverseNatLog1(){
-        double expected = .84;
-        double actual = scientific.getInverseNatLog(1);
+        double expected = 1000000;
+        double actual = scientific.getInverseNatLog(5);
         Assert.assertEquals(expected, actual, 0.02);
     }
     @Test
     public void factorial1(){
-        double expected = .84;
-        double actual = scientific.factorial(1);
+        double expected = 24;
+        double actual = scientific.factorial(-4);
         Assert.assertEquals(expected, actual, 0.02);
     }
 }
