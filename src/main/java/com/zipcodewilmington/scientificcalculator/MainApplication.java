@@ -9,6 +9,22 @@ public class MainApplication {
     private String display; //What the user is going to see, frequently a string version of state
     private boolean isErr; //flags if there is an error, does not run calc functions if isErr is true
 
+    Core core;
+
+    Scientific sci;
+    Console console = new Console();
+
+    public static void main(String[] args) {
+        double state; //Number currently being operated on in the calculator
+        String display; //What the user is going to see, frequently a string version of state
+        boolean isErr; //flags if there is an error, does not run calc functions if isErr is true
+        Core core = new Core();
+        Scientific sci = new Scientific();
+        Console console = new Console();
+
+
+    }
+
 
 
     /**
@@ -97,14 +113,5 @@ public class MainApplication {
         return this.isErr;
     }
 
-    public static void main(String[] args) {
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
 
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d);
-    }
 }
