@@ -55,17 +55,17 @@ public class Scientific {
     figure out wtf is Log vs Natural Log
      */
     public double getLog(double entry) {
-        return result = Math.log(entry);
+        return result = Math.log10(entry);
     }
     /**
      figure out wtf is inverse log vs inverse nat log
      */
     public double getInverseLog(double entry) {
-        return result = Math.exp(entry);
+        return result = Math.pow(10, entry);
     }
 
     public double getNaturalLog(double entry) {
-        return result = Math.log(Math.log(entry));
+        return result = Math.log(entry);
     }
 
     public double getInverseNatLog(double entry) {
