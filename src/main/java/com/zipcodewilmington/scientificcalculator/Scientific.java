@@ -4,13 +4,11 @@ public class Scientific {
     private double memory = 0;
     private double result = 0;
 
-
     public Scientific() {
 
     }
 //    public void switchDisplayMode() {
-//        switch (displayMode) {
-//
+//        if ()
 //        }
 //    }
     public void memoryPlus(double entry) {
@@ -74,13 +72,13 @@ public class Scientific {
     public double factorial(double entry) {
         double factResult = 1;
         if (entry < 0) {
-            for (int i = 0; i <= Math.abs(entry); i++) {
+            for (int i = 1; i <= Math.abs(entry); i++) {
                 factResult *= i;
             }
             factResult *= -1;
             return factResult;
         } else {
-            for (int i = 0; i <= entry; i++) {
+            for (int i = 1; i <= entry; i++) {
                 factResult *= i;
             }
         } return factResult;
