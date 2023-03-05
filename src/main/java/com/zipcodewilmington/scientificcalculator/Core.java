@@ -3,15 +3,6 @@ package com.zipcodewilmington.scientificcalculator;
 public class Core{
 
 
-    /**
-     * Core constructor
-     */
-    public Core(){
-
-    }
-    //all parameters and returns below this line are double
-
-
 
     /**
      * Adds x and y together and returns them.
@@ -19,7 +10,7 @@ public class Core{
      * @param y
      * @return
      */
-    public double add(double x, double y){
+    public static double add(double x, double y){
         return x + y;
     }
 
@@ -29,7 +20,7 @@ public class Core{
      * @param y
      * @return
      */
-    public double subtract(double x, double y){
+    public static double subtract(double x, double y){
         return x - y;
     }
 
@@ -39,7 +30,7 @@ public class Core{
      * @param y
      * @return
      */
-    public double multiply(double x, double y){
+    public static double multiply(double x, double y){
         return x * y;
     }
 
@@ -49,7 +40,7 @@ public class Core{
      * @param y
      * @return
      */
-    public double divide(double x, double y){
+    public static double divide(double x, double y){
         return x/y;
     }
 
@@ -58,7 +49,7 @@ public class Core{
      * @param x
      * @return
      */
-    public double square(double x){
+    public static double square(double x){
         return x*x;
     }
 
@@ -68,7 +59,7 @@ public class Core{
      * @param y
      * @return
      */
-    public double exponent(double x, double y){
+    public static double exponent(double x, double y){
         return Math.pow(x, y);
     }
 
@@ -77,7 +68,7 @@ public class Core{
      * @param x
      * @return
      */
-    public double squareRoot(double x){
+    public static double squareRoot(double x){
         return Math.sqrt(x);
     }
 
@@ -86,7 +77,7 @@ public class Core{
      * @param x
      * @return
      */
-    public double inverse(double x){
+    public static double inverse(double x){
         return 1/x;
     }
 
@@ -95,7 +86,7 @@ public class Core{
      * @param x
      * @return
      */
-    public double switchSign(double x){
+    public static double switchSign(double x){
         return -1*x;
     }
 

@@ -1,117 +1,68 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.Locale;
+
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
 
-    private double state; //Number currently being operated on in the calculator
-    private String display; //What the user is going to see, frequently a string version of state
-    private boolean isErr; //flags if there is an error, does not run calc functions if isErr is true
 
-    Core core;
-
-    Scientific sci;
-    Console console = new Console();
+    public static double processIn(Console con, String input, double x){
+        switch(input){
+            case "multiply":
+                return Core.multiply(x,Console.getDoubleInput());
+            case "add":
+                return Core.add(x, Console.getDoubleInput());
+            case "subtract":
+                return Core.subtract(x,Console.getDoubleInput());
+            case "divide":
+                double y = Console.getDoubleInput();
+                if(y==0){
+                    con.err();
+                    return x;
+                }
+                return Core.divide(x,y);
+            case "square":
+                return Core.square(x);
+            case "square root":
+                if(x<0){
+                    con.err();
+                    return x;
+                }
+                return Core.squareRoot(x);
+            case "exponent":
+                return Core.exponent(x,Console.getDoubleInput());
+            case "switch":
+                return Core.switchSign(x);
+            case "inverse":
+                return Core.inverse(x);
+            case "help":
+                return x;
+            case "clear":
+                con.clearErr();
+                return 0.0;
+            default:
+                System.out.println("Invalid command, please try again");
+        }
+        return 0;
+    }
 
     public static void main(String[] args) {
-        double state; //Number currently being operated on in the calculator
-        String display; //What the user is going to see, frequently a string version of state
-        boolean isErr; //flags if there is an error, does not run calc functions if isErr is true
-        Core core = new Core();
-        Scientific sci = new Scientific();
-        Console console = new Console();
+        Console con = new Console();
+        Console.println("Welcome to our calculator!");
+        Console.println(con.getDisplay());
+        Console.getStringInput("enter command, type 'help' for commands");
 
-
+        String s = Console.getStringInput("enter command, type 'help' for commands");
+        con.update(processIn(con, s, con.getState()));
+        while(true) {
+            Console.println(con.getDisplay());
+            s = Console.getStringInput("enter command").toLowerCase().trim();
+            if(con.checkErr() && !s.equals("clear")){
+                Console.println("Error please clear");
+            }
+            con.update(processIn(con, s, con.getState()));
+        }
     }
-
-
-
-    /**
-     * Gets the state value.
-     * @return double state
-     */
-    public double getState(){
-        return this.state;
-    }
-
-    /**
-     * Primary function to set state and display. !!Please use this one over the setters!!
-     * @param x double value that will become the state and display
-     */
-    public void update(double x){
-        setState(x);
-        setDisplay("" + x);
-    }
-
-    /**
-     * Version of update to use if you want to display a non-decimal version of state.
-     * Translate it BEFORE handing it to update.
-     * @param x decimal value of state
-     * @param nonDecimalState non decimal value to be displayed
-     */
-    public void update(double x, String nonDecimalState){
-        setState(x);
-        setDisplay(nonDecimalState);
-    }
-
-    /**
-     * Sets the state, please use update though.
-     * @param x double value to set state to
-     */
-    public void setState(double x){
-        this.state = x;
-    }
-
-    /**
-     * Returns what is currently on the display.
-     * @return String, display
-     */
-    public String getDisplay() {
-        return this.display;
-    }
-
-    /**
-     * Sets display value, please use update though.
-     * @param display
-     */
-    public void setDisplay(String display) {
-        this.display = display;
-    }
-
-    /**
-     * Reverts state back to 0.
-     */
-    public void clearDisplay(){
-        //System.out.println();
-        update(0.0);
-    }
-
-    /**
-     * Sets display to Err and sets isErr flag to true.
-     * Other functions should not run while err is true
-     */
-    public void err(){
-        setDisplay("Err");
-        this.isErr = true;
-    }
-
-    /**
-     * Resets display to state and sets isErr flag to false.
-     */
-    public void clearErr(){
-        setDisplay("" + state);
-        this.isErr = false;
-    }
-
-    /**
-     * Returns the error status.
-     * False means no error, so we will likely negate this value frequently.
-     * @return boolean value of error
-     */
-    public boolean checkErr(){
-        return this.isErr;
-    }
-
-
 }
