@@ -3,18 +3,16 @@ package com.zipcodewilmington.scientificcalculator;
 public class Scientific {
     private double memory = 0;
     private double result = 0;
-    enum displayMode {binary, octal, decimal, hexadecimal};
-
 
 
     public Scientific() {
 
     }
-    public void switchDisplayMode() {
-        switch (displayMode) {
-
-        }
-    }
+//    public void switchDisplayMode() {
+//        switch (displayMode) {
+//
+//        }
+//    }
     public void memoryPlus(double entry) {
         double memory = entry;
     }
@@ -80,6 +78,7 @@ public class Scientific {
                 factResult *= i;
             }
             factResult *= -1;
+            return factResult;
         } else {
             for (int i = 0; i <= entry; i++) {
                 factResult *= i;
