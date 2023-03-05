@@ -26,15 +26,15 @@ public class Scientific {
     }
 
     public double getSine(double entry){
-        return result = Math.sin(Math.toRadians(entry));
+        return result = Math.sin(entry);
     }
 
     public double getCosine(double entry) {
-        return result = Math.cos(Math.toRadians(entry));
+        return result = Math.cos(entry);
     }
 
     public double getTangent(double entry) {
-        return result = Math.tan(Math.toRadians(entry));
+        return result = Math.tan(entry);
     }
 
     public double getInverseSine(double entry) {
