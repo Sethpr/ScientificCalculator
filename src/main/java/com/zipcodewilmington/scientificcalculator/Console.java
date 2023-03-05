@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -11,6 +12,18 @@ public class Console {
     private String display = "0.0"; //What the user is going to see, frequently a string version of state
     private boolean isErr = false; //flags if there is an error, does not run calc functions if isErr is true
 
+    private double memory = 0;
+
+
+    public void memoryPlus(double entry) {
+        double memory = entry;
+    }
+    public void memoryClear(double entry) {
+        double memory = 0;
+    }
+    public double memoryCall() {
+        return memory;
+    }
     /**
      * Gets the state value.
      * @return double state
@@ -93,7 +106,6 @@ public class Console {
         this.isErr = false;
     }
 
-
     /**
      * Returns the error status.
      * False means no error, so we will likely negate this value frequently.
@@ -102,9 +114,42 @@ public class Console {
     public boolean checkErr(){
         return isErr;
     }
-
-
-
+    public String switchDisplayMode(String mode, double state) {
+        if (mode.equalsIgnoreCase("binary")) {
+            if (state >= 1 || state <= 0) {
+                return "error";
+            }
+            StringBuilder binaryMode = new StringBuilder();
+            binaryMode.append(".");
+            while (state > 0) {
+                if (binaryMode.length() >= 32) {
+                    return "error";
+                }
+            }
+            double r = state * 2;
+            if (r >= 1) {
+                binaryMode.append("1");
+                state = r -1;
+            } else {
+                binaryMode.append("0");
+                state = r;
+            }
+            return binaryMode.toString();
+        } else if (mode.equalsIgnoreCase("octal")) {
+            String octalString = Integer.toOctalString((int) state);
+        } else if (mode.equalsIgnoreCase("decimal")) {
+            return "" + state;
+        } else if (mode.equalsIgnoreCase("hexadecimal")) {
+            String hexa = Double.toHexString(state);
+            return hexa;
+        }
+        return mode;
+    }
+    public String switchUnitsMode(String mode, double state) {
+        if (mode.equalsIgnoreCase("degrees")) {
+            return String.valueOf(Math.toDegrees(state));
+        } else if ()
+    }
     public static void print(String output, Object... args) {
         System.out.printf(output, args);
     }
