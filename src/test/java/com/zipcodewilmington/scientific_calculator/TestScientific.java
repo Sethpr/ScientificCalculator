@@ -11,16 +11,17 @@ public class TestScientific {
     public void setup() {scientific = new Scientific();}
     @Test
     public void getSineTest1(){
-        double expected = .84147;
+        double expected = 0.01745;
         double actual = scientific.getSine(1);
-        Assert.assertEquals(expected, actual, 0.02);
+        Assert.assertEquals(expected, actual, 0.00001);
     }
     @Test
     public void getCosineTest1(){
-        double expected = 0.5403;
-        double actual = scientific.getCosine(1);
+        double expected = 0.99;
+        double actual = scientific.getCosine(5);
         Assert.assertEquals(expected, actual, 0.02);
     }
+
     @Test
     public void getTangentTest1(){
         double expected = 1.5574;
@@ -55,8 +56,8 @@ public class TestScientific {
     }
     @Test
     public void getLog1(){
-        double expected = .84;
-        double actual = scientific.getLog(1);
+        double expected = 0.69897;
+        double actual = scientific.getLog(5);
         Assert.assertEquals(expected, actual, 0.02);
     }
     @Test
@@ -73,7 +74,7 @@ public class TestScientific {
     }
     @Test
     public void getInverseNatLog1(){
-        double expected = 1000000;
+        double expected = 148.4131591;
         double actual = scientific.getInverseNatLog(5);
         Assert.assertEquals(expected, actual, 0.02);
     }
