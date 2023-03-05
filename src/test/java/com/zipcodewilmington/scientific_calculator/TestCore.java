@@ -86,8 +86,14 @@ public class TestCore {
     }
     @Test
     public void switchSignsTest2() {
-        double expected = 0.0;
-        double actual = core.switchSign(0.0);
+        double expected = 1;
+        double actual = core.switchSign(-1);
+        Assert.assertEquals(expected, actual, 0.01);
+    }
+    @Test
+    public void modTest1() {
+        double expected = 0.5;
+        double actual = core.mod(3.0, 1.25);
         Assert.assertEquals(expected, actual, 0.01);
     }
 }
