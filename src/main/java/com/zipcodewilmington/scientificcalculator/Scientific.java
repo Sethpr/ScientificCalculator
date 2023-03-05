@@ -38,15 +38,15 @@ public class Scientific {
     }
 
     public double getInverseSine(double entry) {
-        return result = Math.asin(Math.toRadians(entry));
+        return result = Math.asin(entry);
     }
 
     public double getInverseCosine(double entry) {
-        return result = Math.acos(Math.toRadians(entry));
+        return result = Math.acos(entry);
     }
 
     public double getInverseTangent(double entry) {
-        return result = Math.atan(Math.toRadians(entry));
+        return result = Math.atan(entry);
     }
 
     public String switchUnitsMode(String mode) {
