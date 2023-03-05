@@ -37,6 +37,8 @@ public class MainApplication {
                 return Core.switchSign(x);
             case "inverse":
                 return Core.inverse(x);
+            case "mod":
+                return Core.mod(x,Console.getDoubleInput());
             case "help":
                 help();
                 return x;
@@ -68,6 +70,6 @@ public class MainApplication {
         System.out.println("list of commands:");
         System.out.println("add, subtract, multiply, divide");
         System.out.println("square, square root, exponent, switch sign");
-        System.out.println("inverse, help, clear");
+        System.out.println("inverse, mod, help, clear");
     }
 }

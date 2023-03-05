@@ -90,6 +90,10 @@ public class Core{
         return -1*x;
     }
 
+    public static double mod(double x, double y){
+        return x%y;
+    }
+
 
 
 }
