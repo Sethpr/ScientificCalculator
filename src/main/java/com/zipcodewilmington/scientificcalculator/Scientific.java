@@ -74,11 +74,17 @@ public class Scientific {
     }
 
     public double factorial(double entry) {
-        long factResult = 1;
-        for (int i = 0; i <= entry; i++) {
-            factResult *= i;
-        }
-        return factResult;
+        double factResult = 1;
+        if (entry < 0) {
+            for (int i = 0; i <= Math.abs(entry); i++) {
+                factResult *= i;
+            }
+            factResult *= -1;
+        } else {
+            for (int i = 0; i <= entry; i++) {
+                factResult *= i;
+            }
+        } return factResult;
     }
 
 
