@@ -20,7 +20,6 @@ public class Scientific {
     public void memoryClear(double entry) {
         double memory = 0;
     }
-
     public double memoryCall() {
         return memory;
     }
@@ -38,39 +37,47 @@ public class Scientific {
     }
 
     public double getInverseSine(double entry) {
-        return result;
+        return result = Math.asin(entry);
     }
 
     public double getInverseCosine(double entry) {
-        return result;
+        return result = Math.acos(entry);
     }
 
     public double getInverseTangent(double entry) {
-        return result;
+        return result = Math.atan(entry);
     }
 
     public String switchUnitsMode(String mode) {
         return null;
     }
-
+    /**
+    figure out wtf is Log vs Natural Log
+     */
     public double getLog(double entry) {
-        return result;
+        return result = Math.log10(entry);
     }
-
+    /**
+     figure out wtf is inverse log vs inverse nat log
+     */
     public double getInverseLog(double entry) {
-        return result;
+        return result = Math.pow(10, entry);
     }
 
     public double getNaturalLog(double entry) {
-        return result;
+        return result = Math.log(entry);
     }
 
     public double getInverseNatLog(double entry) {
-        return result;
+        return result = Math.exp(entry);
     }
 
     public double factorial(double entry) {
-        return result;
+        long factResult = 1;
+        for (int i = 0; i <= entry; i++) {
+            factResult *= i;
+        }
+        return factResult;
     }
 
 
