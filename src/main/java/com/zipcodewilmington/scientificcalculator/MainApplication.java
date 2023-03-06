@@ -78,6 +78,7 @@ public class MainApplication {
                 return Scientific.inverseCosine(x);
             case "inverse log":
                 return Scientific.inverseNatLog(x);
+            case "inverse ln":
             case "inverse natural log":
                 return Scientific.inverseSine(x);
             case "inverse tangent":
@@ -161,6 +162,7 @@ public class MainApplication {
         System.out.println("sine, cosine, tangent");
         System.out.println("inverseSine, inverseCosine, inverseTangent");
         System.out.println("log, inverseLog, naturalLog, inverseNatLog");
+        System.out.println("abs, round, floor, ceiling");
         System.out.println("factorial, boom, hehe");
         System.out.println("switch display, switch units");
     }
