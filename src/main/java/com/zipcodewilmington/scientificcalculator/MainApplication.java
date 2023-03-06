@@ -1,5 +1,9 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Locale;
 
 /**
@@ -68,6 +72,24 @@ public class MainApplication {
                 return con.memoryCall();
             case "clear memory":
                 con.memoryClear(x);
+                return x;
+            case "switch display":
+                System.out.println("0: binary\n1: octal\n2: decimal\n3: hex");
+                con.switchDisplayMode(Console.getIntegerInput());
+                return x;
+            case "69":
+            case "420":
+            case "80085":
+                Desktop desktop = java.awt.Desktop.getDesktop();
+                try {
+                    //specify the protocol along with the URL
+                    URI oURL = new URI(
+                            "https://www.youtube.com/watch?v=dQw4w9WgXcQ"); //lol, lmao
+                    desktop.browse(oURL);
+                } catch (URISyntaxException | IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
                 return x;
             case "help":
                 help();

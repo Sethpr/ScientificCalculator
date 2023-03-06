@@ -3,6 +3,8 @@ package com.zipcodewilmington.scientificcalculator;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+import static java.lang.Integer.*;
+
 /**
  * Created by leon on 2/9/18.
  */
@@ -11,8 +13,8 @@ public class Console {
     private double state = 0.0; //Number currently being operated on in the calculator
     private String display = "0.0"; //What the user is going to see, frequently a string version of state
     private boolean isErr = false; //flags if there is an error, does not run calc functions if isErr is true
-
-    private double memory = 0;
+    private double memory = 0;// 0 is binary, 1 is octal, 2 is decimal, 3 is hex.
+    private int displayMode = 2;
 
 
     public void memoryPlus(double entry) {
@@ -42,7 +44,21 @@ public class Console {
         }
         else {
             setState(x);
-            setDisplay("" + x);
+            switch(displayMode){
+                case 0:
+                    setDisplay(toBinaryString((int) x));
+                    break;
+                case 1:
+                    setDisplay(toOctalString((int) x));
+                    break;
+                case 2:
+                    setDisplay("" + x);
+                    break;
+                case 3:
+                    setDisplay(toHexString((int) x));
+                    break;
+            }
+
         }
     }
 
@@ -114,36 +130,12 @@ public class Console {
     public boolean checkErr(){
         return isErr;
     }
-    public String switchDisplayMode(String mode, double state) {
-        if (mode.equalsIgnoreCase("binary")) {
-            if (state >= 1 || state <= 0) {
-                return "error";
-            }
-            StringBuilder binaryMode = new StringBuilder();
-            binaryMode.append(".");
-            while (state > 0) {
-                if (binaryMode.length() >= 32) {
-                    return "error";
-                }
-            }
-            double r = state * 2;
-            if (r >= 1) {
-                binaryMode.append("1");
-                state = r -1;
-            } else {
-                binaryMode.append("0");
-                state = r;
-            }
-            return binaryMode.toString();
-        } else if (mode.equalsIgnoreCase("octal")) {
-            String octalString = Integer.toOctalString((int) state);
-        } else if (mode.equalsIgnoreCase("decimal")) {
-            return "" + state;
-        } else if (mode.equalsIgnoreCase("hexadecimal")) {
-            String hexa = Double.toHexString(state);
-            return hexa;
+    public void switchDisplayMode(int mode) {
+        if(mode >= 0 && mode <= 3){
+            this.displayMode = mode;
+            return;
         }
-        return mode;
+        this.displayMode = 2;
     }
     public String switchUnitsMode(String mode, double state) {
         if (mode.equalsIgnoreCase("degrees")) {
@@ -167,8 +159,11 @@ public class Console {
         return userInput;
     }
 
-    public static Integer getIntegerInput(String prompt) {
-        return null;
+    public static Integer getIntegerInput() {
+        Scanner scanner = new Scanner(System.in);
+        //println("Please enter a number");
+        double userInput = scanner.nextInt();
+        return (int) userInput;
     }
 
     public static Double getDoubleInput() {
