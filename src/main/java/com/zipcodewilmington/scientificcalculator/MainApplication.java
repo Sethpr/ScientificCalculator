@@ -40,25 +40,25 @@ public class MainApplication {
             case "mod":
                 return Core.mod(x,Console.getDoubleInput());
             case "sine":
-                return Scientific.getSine(x);
+                return Scientific.sine(x);
             case "cosine":
-                return Scientific.getCosine(x);
+                return Scientific.cosine(x);
             case "tangent":
-                return Scientific.getTangent(x);
+                return Scientific.tangent(x);
             case "log":
-                return Scientific.getLog(x);
+                return Scientific.log(x);
             case "natural log":
-                return Scientific.getNaturalLog(x);
+                return Scientific.naturalLog(x);
             case "inverse sine":
-                return Scientific.getInverseSine(x);
+                return Scientific.inverseLog(x);
             case "inverse cosine":
-                return Scientific.getInverseCosine(x);
+                return Scientific.inverseCosine(x);
             case "inverse log":
-                return Scientific.getInverseLog(x);
+                return Scientific.inverseNatLog(x);
             case "inverse natural log":
-                return Scientific.getInverseNatLog(x);
+                return Scientific.inverseSine(x);
             case "inverse tangent":
-                return Scientific.getInverseTangent(x);
+                return Scientific.inverseTangent(x);
             case "factorial":
                 return Scientific.factorial(x);
             case "set memory":
@@ -101,5 +101,10 @@ public class MainApplication {
         System.out.println("add, subtract, multiply, divide");
         System.out.println("square, square root, exponent, switch sign");
         System.out.println("inverse, mod, help, clear");
+        System.out.println("sine, cosine, tangent, ");
+        System.out.println("inverseSine, inverseCosine, inverseTangent");
+        System.out.println("log, inverseLog, naturalLog, inverseNatLog");
+        System.out.println("factorial");
+
     }
 }
