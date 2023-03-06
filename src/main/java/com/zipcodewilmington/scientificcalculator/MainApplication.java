@@ -39,6 +39,36 @@ public class MainApplication {
                 return Core.inverse(x);
             case "mod":
                 return Core.mod(x,Console.getDoubleInput());
+            case "sine":
+                return Scientific.getSine(x);
+            case "cosine":
+                return Scientific.getCosine(x);
+            case "tangent":
+                return Scientific.getTangent(x);
+            case "log":
+                return Scientific.getLog(x);
+            case "natural log":
+                return Scientific.getNaturalLog(x);
+            case "inverse sine":
+                return Scientific.getInverseSine(x);
+            case "inverse cosine":
+                return Scientific.getInverseCosine(x);
+            case "inverse log":
+                return Scientific.getInverseLog(x);
+            case "inverse natural log":
+                return Scientific.getInverseNatLog(x);
+            case "inverse tangent":
+                return Scientific.getInverseTangent(x);
+            case "factorial":
+                return Scientific.factorial(x);
+            case "set memory":
+                con.memoryPlus(x);
+                return x;
+            case "get memory":
+                return con.memoryCall();
+            case "clear memory":
+                con.memoryClear(x);
+                return x;
             case "help":
                 help();
                 return x;
