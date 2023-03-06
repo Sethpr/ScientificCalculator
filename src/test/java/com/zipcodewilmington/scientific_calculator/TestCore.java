@@ -96,6 +96,30 @@ public class TestCore {
         double actual = core.mod(3.0, 1.25);
         Assert.assertEquals(expected, actual, 0.01);
     }
+    @Test
+    public void roundTest1() {
+        double expected = 1;
+        double actual = core.round(1.23);
+        Assert.assertEquals(expected, actual, 0.01);
+    }
+    @Test
+    public void floorTest1() {
+        double expected = 1;
+        double actual = core.floor(1.6);
+        Assert.assertEquals(expected, actual, 0.01);
+    }
+    @Test
+    public void absTest1() {
+        double expected = 1;
+        double actual = core.abs(-1);
+        Assert.assertEquals(expected, actual, 0.01);
+    }
+    @Test
+    public void ceilingTest1() {
+        double expected = 2;
+        double actual = core.ceiling(1.2);
+        Assert.assertEquals(expected, actual, 0.01);
+    }
 }
 
 
