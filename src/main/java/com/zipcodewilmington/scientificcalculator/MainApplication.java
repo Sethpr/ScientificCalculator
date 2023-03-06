@@ -11,7 +11,6 @@ import java.util.Locale;
  */
 public class MainApplication {
 
-
     public static double processIn(Console con, String input, double x){
         switch(input){
             case "multiply":
@@ -77,9 +76,12 @@ public class MainApplication {
                 System.out.println("0: binary\n1: octal\n2: decimal\n3: hex");
                 con.switchDisplayMode(Console.getIntegerInput());
                 return x;
-            case "69":
-            case "420":
-            case "80085":
+            case "switch units":
+                System.out.println("0: degrees\n1: radians");
+                con.switchUnitsMode(Console.getIntegerInput());
+                return x;
+            case "boom":
+            case "hehe":
                 Desktop desktop = java.awt.Desktop.getDesktop();
                 try {
                     //specify the protocol along with the URL
@@ -126,7 +128,7 @@ public class MainApplication {
         System.out.println("sine, cosine, tangent, ");
         System.out.println("inverseSine, inverseCosine, inverseTangent");
         System.out.println("log, inverseLog, naturalLog, inverseNatLog");
-        System.out.println("factorial");
-
+        System.out.println("factorial, boom, hehe");
+        System.out.println("switch display, switch units");
     }
 }

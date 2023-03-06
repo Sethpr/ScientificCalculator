@@ -13,9 +13,8 @@ public class Console {
     private double state = 0.0; //Number currently being operated on in the calculator
     private String display = "0.0"; //What the user is going to see, frequently a string version of state
     private boolean isErr = false; //flags if there is an error, does not run calc functions if isErr is true
-    private double memory = 0;// 0 is binary, 1 is octal, 2 is decimal, 3 is hex.
-    private int displayMode = 2;
-
+    private double memory = 0;
+    private int displayMode = 2; // 0 is binary, 1 is octal, 2 is decimal, 3 is hex.
 
     public void memoryPlus(double entry) {
         double memory = entry;
@@ -58,7 +57,6 @@ public class Console {
                     setDisplay(toHexString((int) x));
                     break;
             }
-
         }
     }
 
@@ -137,13 +135,12 @@ public class Console {
         }
         this.displayMode = 2;
     }
-    public String switchUnitsMode(String mode, double state) {
-        if (mode.equalsIgnoreCase("degrees")) {
-            return String.valueOf(Math.toDegrees(state));
-        } else if (mode.equalsIgnoreCase("radians")) {
-            return String.valueOf(Math.toDegrees(state));
-        }   return "" + state;
+    public void switchUnitsMode(int mode) {
+        if (mode <= 1 && mode >= 0) {
+            Scientific.setUnits(mode);
+        }
     }
+
     public static void print(String output, Object... args) {
         System.out.printf(output, args);
     }
