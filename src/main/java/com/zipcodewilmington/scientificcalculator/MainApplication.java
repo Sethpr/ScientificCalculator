@@ -34,11 +34,11 @@ public class MainApplication {
                     return x;
                 }
                 return Core.divide(x,y);
+            case "^2":
+            case "^ 2":
             case "square":
                 return Core.square(x);
             case "sqrt":
-            case "^2":
-            case "^ 2":
             case "square root":
                 if(x<0){
                     con.err();
