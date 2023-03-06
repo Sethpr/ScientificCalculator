@@ -13,12 +13,20 @@ public class MainApplication {
 
     public static double processIn(Console con, String input, double x){
         switch(input){
+            case "times":
+            case "x":
+            case "*":
             case "multiply":
                 return Core.multiply(x,Console.getDoubleInput());
+            case "plus":
+            case "+":
             case "add":
                 return Core.add(x, Console.getDoubleInput());
+            case "minus":
+            case "-":
             case "subtract":
                 return Core.subtract(x,Console.getDoubleInput());
+            case "/":
             case "divide":
                 double y = Console.getDoubleInput();
                 if(y==0){
@@ -28,28 +36,39 @@ public class MainApplication {
                 return Core.divide(x,y);
             case "square":
                 return Core.square(x);
+            case "sqrt":
+            case "^2":
+            case "^ 2":
             case "square root":
                 if(x<0){
                     con.err();
                     return x;
                 }
                 return Core.squareRoot(x);
+            case "^":
+            case "power":
             case "exponent":
                 return Core.exponent(x,Console.getDoubleInput());
+            case "negate":
             case "switch sign":
                 return Core.switchSign(x);
             case "inverse":
                 return Core.inverse(x);
+            case "modulo":
             case "mod":
                 return Core.mod(x,Console.getDoubleInput());
+            case "sin":
             case "sine":
                 return Scientific.sine(x);
+            case "cos":
             case "cosine":
                 return Scientific.cosine(x);
+            case "tan":
             case "tangent":
                 return Scientific.tangent(x);
             case "log":
                 return Scientific.log(x);
+            case "ln":
             case "natural log":
                 return Scientific.naturalLog(x);
             case "inverse sine":
@@ -62,6 +81,7 @@ public class MainApplication {
                 return Scientific.inverseSine(x);
             case "inverse tangent":
                 return Scientific.inverseTangent(x);
+            case "fact":
             case "factorial":
                 return Scientific.factorial(x);
             case "set memory":
@@ -93,6 +113,7 @@ public class MainApplication {
                     e.printStackTrace();
                 }
                 return x;
+            case "h":
             case "help":
                 help();
                 return x;
