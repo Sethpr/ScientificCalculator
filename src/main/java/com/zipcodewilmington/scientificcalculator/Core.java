@@ -94,6 +94,22 @@ public class Core{
         return x%y;
     }
 
+    public static double abs(double x){
+        return Math.abs(x);
+    }
+
+    public static double round(double x){
+        return Math.round(x);
+    }
+
+    public static double floor(double x){
+        return Math.floor(x);
+    }
+
+    public static double ceiling(double x){
+        return Math.ceil(x);
+    }
+
 
 
 }

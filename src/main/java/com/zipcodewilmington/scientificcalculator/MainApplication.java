@@ -55,6 +55,7 @@ public class MainApplication {
             case "inverse":
                 return Core.inverse(x);
             case "modulo":
+            case "%":
             case "mod":
                 return Core.mod(x,Console.getDoubleInput());
             case "sin":
@@ -100,7 +101,18 @@ public class MainApplication {
                 System.out.println("0: degrees\n1: radians");
                 con.switchUnitsMode(Console.getIntegerInput());
                 return x;
+            case "round":
+                return Core.round(x);
+            case "floor":
+                return Core.floor(x);
+            case "ceil":
+            case "ceiling":
+                return Core.ceiling(x);
+            case "abs":
+            case "absolute value":
+                return Core.abs(x);
             case "boom":
+            case "rickRoll":
             case "hehe":
                 Desktop desktop = java.awt.Desktop.getDesktop();
                 try {
@@ -146,7 +158,7 @@ public class MainApplication {
         System.out.println("add, subtract, multiply, divide");
         System.out.println("square, square root, exponent, switch sign");
         System.out.println("inverse, mod, help, clear");
-        System.out.println("sine, cosine, tangent, ");
+        System.out.println("sine, cosine, tangent");
         System.out.println("inverseSine, inverseCosine, inverseTangent");
         System.out.println("log, inverseLog, naturalLog, inverseNatLog");
         System.out.println("factorial, boom, hehe");
